@@ -12,6 +12,7 @@
 <h2 id="创建表"><a href="#创建表" class="headerlink" title="创建表"></a>创建表</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">import pymysql</span><br><span class="line">db = pymysql.connect(host=<span class="string">'localhost'</span>,user=<span class="string">'root'</span>,password=<span class="string">'123456'</span>,port=3306,db = <span class="string">'spiders'</span>) <span class="comment">#相比于创建库，创建表多了数据库名</span></span><br><span class="line">cursor = db.cursor()</span><br><span class="line">sql = <span class="string">'create table if not exists student(id varchar(225) not null,name varchar(225) not null,age int not null,primary key (id))'</span><span class="comment">#创建学生表id，name，age，id为主键</span></span><br><span class="line">cursor.execute(sql)</span><br><span class="line">db.close()</span><br></pre></td></tr></table></figure>
 
 
+
 ]]></content>
   </entry>
   <entry>
