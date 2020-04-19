@@ -27,13 +27,13 @@
 <meta property="og:site_name" content="Biao-K">
 <meta property="og:description" content="mysql想必大家都比较收悉吧，那么怎么在python中对MySQL进行增删改查呢？就让我和大家一起来学习吧！">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://yoursite.com/.com//F:%5Cblog%5Csource_posts%5Cpymysql%5C1.png">
-<meta property="og:image" content="http://yoursite.com/.com//F:%5Cblog%5Csource_posts%5Cpymysql%5C2.png">
+<meta property="og:image" content="http://yoursite.com/.com//1.png">
+<meta property="og:image" content="http://yoursite.com/.com//2.png">
 <meta property="article:published_time" content="2020-04-19T07:37:20.000Z">
-<meta property="article:modified_time" content="2020-04-19T08:47:49.227Z">
+<meta property="article:modified_time" content="2020-04-19T08:50:31.223Z">
 <meta property="article:author" content="小小代码员">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://yoursite.com/.com//F:%5Cblog%5Csource_posts%5Cpymysql%5C1.png">
+<meta name="twitter:image" content="http://yoursite.com/.com//1.png">
 
 <link rel="canonical" href="http://yoursite.com/2020/04/19/pymysql%E5%A2%9E%E5%88%A0%E6%94%B9%E6%9F%A5/">
 
@@ -283,12 +283,12 @@
         <h3 id="mysql想必大家都比较收悉吧，那么怎么在python中对MySQL进行增删改查呢？就让我和大家一起来学习吧！"><a href="#mysql想必大家都比较收悉吧，那么怎么在python中对MySQL进行增删改查呢？就让我和大家一起来学习吧！" class="headerlink" title="mysql想必大家都比较收悉吧，那么怎么在python中对MySQL进行增删改查呢？就让我和大家一起来学习吧！"></a>mysql想必大家都比较收悉吧，那么怎么在python中对MySQL进行增删改查呢？就让我和大家一起来学习吧！</h3><a id="more"></a>
 <h2 id="安装数据库"><a href="#安装数据库" class="headerlink" title="安装数据库"></a>安装数据库</h2><p>[这个链接里面写的很详细]<a href="https://blog.csdn.net/chic_data/article/details/72286329" target="_blank" rel="noopener">https://blog.csdn.net/chic_data/article/details/72286329</a></p>
 <h2 id="连接数据库"><a href="#连接数据库" class="headerlink" title="连接数据库"></a>连接数据库</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">import pymysql</span><br><span class="line">db = pymysql.connect(host=<span class="string">'localhost'</span>,user=<span class="string">'root'</span>,password=<span class="string">'123456'</span>,port=3306) <span class="comment">#利用connect方法声明一个mysql对象，需要输入mysql的ip（由于我们只是本地运行，所以输入localhost就行，然后传入用户名，密码，以及端口号）</span></span><br><span class="line">cursor = db.cursor()<span class="comment">#调用cursor来获取MySQL的操作游标</span></span><br><span class="line">cursor.execute(<span class="string">'SELECT VERSION()'</span>)<span class="comment"># 调用execute方法执行一个MySQL语句</span></span><br><span class="line">data = cursor.fetchone()<span class="comment">#调用fetchone方法获取第一条数据</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">'Database version:'</span>, data)</span><br><span class="line">cursor.execute(<span class="string">"create database spiders default character set utf8"</span>) <span class="comment">#创建数据库名为spiders</span></span><br><span class="line">db.close() <span class="comment">#关闭</span></span><br></pre></td></tr></table></figure>
-<p><img src="/.com//F:%5Cblog%5Csource_posts%5Cpymysql%5C1.png" alt="avatar"></p>
+<p><img src="/.com//1.png" alt></p>
 <hr>
 <hr>
 <hr>
 <h2 id="创建表"><a href="#创建表" class="headerlink" title="创建表"></a>创建表</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">import pymysql</span><br><span class="line">db = pymysql.connect(host=<span class="string">'localhost'</span>,user=<span class="string">'root'</span>,password=<span class="string">'123456'</span>,port=3306,db = <span class="string">'spiders'</span>) <span class="comment">#相比于创建库，创建表多了数据库名</span></span><br><span class="line">cursor = db.cursor()</span><br><span class="line">sql = <span class="string">'create table if not exists student(id varchar(225) not null,name varchar(225) not null,age int not null,primary key (id))'</span><span class="comment">#创建学生表id，name，age，id为主键</span></span><br><span class="line">cursor.execute(sql)</span><br><span class="line">db.close()</span><br></pre></td></tr></table></figure>
-<p><img src="/.com//F:%5Cblog%5Csource_posts%5Cpymysql%5C2.png" alt="avatar"></p>
+<p><img src="/.com//2.png" alt></p>
 
     </div>
 
@@ -337,13 +337,10 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2020/04/16/docker%E5%AE%89%E8%A3%85/" rel="prev" title="docker安装">
-      <i class="fa fa-chevron-left"></i> docker安装
+    <a href="/2020/04/19/pymysql/" rel="prev" title="pymysql增删改查">
+      <i class="fa fa-chevron-left"></i> pymysql增删改查
     </a></div>
-      <div class="post-nav-item">
-    <a href="/2020/04/19/pymysql/" rel="next" title="pymysql增删改查">
-      pymysql增删改查 <i class="fa fa-chevron-right"></i>
-    </a></div>
+      <div class="post-nav-item"></div>
     </div>
       </footer>
     
