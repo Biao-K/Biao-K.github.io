@@ -1,5 +1,5 @@
 (function() {
-    var coreSocialistValues = ["没有钱","长得丑","个子矮","只有学习","代码使我快乐"],
+    var coreSocialistValues = ["没有钱","长得丑","个子矮","只有学习","代码使我快乐"];
     index = Math.floor(Math.random() * coreSocialistValues.length);
 	
     document.body.addEventListener('click',
