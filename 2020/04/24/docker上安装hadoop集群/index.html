@@ -29,8 +29,15 @@
 <meta property="og:description" content="在docker上安装hadoop集群(基于docker安装之上)">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://pic.downk.cc/item/5ea2a29bc2a9a83be5686a87.png">
+<meta property="og:image" content="https://pic.downk.cc/item/5ea2a6f3c2a9a83be56e62fa.jpg">
+<meta property="og:image" content="https://pic.downk.cc/item/5ea2a8b8c2a9a83be5709822.jpg">
+<meta property="og:image" content="https://pic.downk.cc/item/5ea2a9f9c2a9a83be57218f4.jpg">
+<meta property="og:image" content="https://pic.downk.cc/item/5ea2add4c2a9a83be5772f3b.jpg">
+<meta property="og:image" content="https://pic.downk.cc/item/5ea2aeb3c2a9a83be57856b1.jpg">
+<meta property="og:image" content="https://pic.downk.cc/item/5ea2af9ac2a9a83be5797bbc.jpg">
+<meta property="og:image" content="https://pic.downk.cc/item/5ea2afd2c2a9a83be579c055.jpg">
 <meta property="article:published_time" content="2020-04-24T08:15:37.000Z">
-<meta property="article:modified_time" content="2020-04-24T08:28:12.160Z">
+<meta property="article:modified_time" content="2020-04-24T10:14:25.255Z">
 <meta property="article:author" content="小小代码员">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://pic.downk.cc/item/5ea2a29bc2a9a83be5686a87.png">
@@ -261,7 +268,7 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>168</span>
+              <span>1.3k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -290,6 +297,47 @@
 <h2 id="完成ubuntu的镜像拉去之后开始检验查看知否安装成功"><a href="#完成ubuntu的镜像拉去之后开始检验查看知否安装成功" class="headerlink" title="完成ubuntu的镜像拉去之后开始检验查看知否安装成功"></a>完成ubuntu的镜像拉去之后开始检验查看知否安装成功</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker images</span><br></pre></td></tr></table></figure>
 <p><img src="https://pic.downk.cc/item/5ea2a29bc2a9a83be5686a87.png" alt></p>
 <hr>
+<h2 id="在dicker上运行ubuntu"><a href="#在dicker上运行ubuntu" class="headerlink" title="在dicker上运行ubuntu"></a>在dicker上运行ubuntu</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker run -it -v ~/docker-ubuntu:/root/docker-ubuntu --name ubuntu ubuntu</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="更新资源（在docker上的ubuntu默认是root用户）"><a href="#更新资源（在docker上的ubuntu默认是root用户）" class="headerlink" title="更新资源（在docker上的ubuntu默认是root用户）"></a>更新资源（在docker上的ubuntu默认是root用户）</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apt update</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="安装vim编辑器（个人觉得gedit更好用，但是不知道怎么的docker用不了gedit）"><a href="#安装vim编辑器（个人觉得gedit更好用，但是不知道怎么的docker用不了gedit）" class="headerlink" title="安装vim编辑器（个人觉得gedit更好用，但是不知道怎么的docker用不了gedit）"></a>安装vim编辑器（个人觉得gedit更好用，但是不知道怎么的docker用不了gedit）</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apt install vim</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="安装ssh"><a href="#安装ssh" class="headerlink" title="安装ssh"></a>安装ssh</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apt install ssh</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="设置ssh免密码登陆"><a href="#设置ssh免密码登陆" class="headerlink" title="设置ssh免密码登陆"></a>设置ssh免密码登陆</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -t rsa   <span class="comment">#一直点回车</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">cd</span> /root/.ssh</span><br><span class="line"></span><br><span class="line">cat id_rsa.pub &gt;&gt; authorized_keys</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="设置ssh自动启动"><a href="#设置ssh自动启动" class="headerlink" title="设置ssh自动启动"></a>设置ssh自动启动</h2><h3 id="进入bashrc"><a href="#进入bashrc" class="headerlink" title="进入bashrc"></a>进入bashrc</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim ~/.bashrc</span><br></pre></td></tr></table></figure>
+<h3 id="在文件中加上启动命令"><a href="#在文件中加上启动命令" class="headerlink" title="在文件中加上启动命令"></a>在文件中加上启动命令</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/etc/init.d/ssh start</span><br></pre></td></tr></table></figure>
+<p><img src="https://pic.downk.cc/item/5ea2a6f3c2a9a83be56e62fa.jpg" alt></p>
+<h3 id="使用source命令，使之生效"><a href="#使用source命令，使之生效" class="headerlink" title="使用source命令，使之生效"></a>使用source命令，使之生效</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">source</span> ~/.bashrc</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="安装jdk"><a href="#安装jdk" class="headerlink" title="安装jdk"></a>安装jdk</h2><h3 id="下载安装"><a href="#下载安装" class="headerlink" title="下载安装"></a>下载安装</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apt  install openjdk-8-jdk</span><br></pre></td></tr></table></figure>
+<h3 id="加入JAVA环境变量"><a href="#加入JAVA环境变量" class="headerlink" title="加入JAVA环境变量"></a>加入JAVA环境变量</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">vim ~/.bashrc</span><br><span class="line"></span><br><span class="line"><span class="comment">#加入下面两个语句</span></span><br><span class="line"><span class="built_in">export</span> JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64/</span><br><span class="line"><span class="built_in">export</span> PATH=<span class="variable">$PATH</span>:<span class="variable">$JAVA_HOME</span>/bin</span><br></pre></td></tr></table></figure>
+<p><img src="https://pic.downk.cc/item/5ea2a8b8c2a9a83be5709822.jpg" alt></p>
+<h3 id="使用source命令"><a href="#使用source命令" class="headerlink" title="使用source命令"></a>使用source命令</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">source</span> ~/.bashrc</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="保存镜像（打开新的终端）"><a href="#保存镜像（打开新的终端）" class="headerlink" title="保存镜像（打开新的终端）"></a>保存镜像（打开新的终端）</h2><h3 id="查看所以容器"><a href="#查看所以容器" class="headerlink" title="查看所以容器"></a>查看所以容器</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo docker ps -a</span><br></pre></td></tr></table></figure>
+<p><img src="https://pic.downk.cc/item/5ea2a9f9c2a9a83be57218f4.jpg" alt></p>
+<h3 id="保存容器"><a href="#保存容器" class="headerlink" title="保存容器"></a>保存容器</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo docker commit id[你自己的容器id] ubuntu/jdkinstalled</span><br></pre></td></tr></table></figure>
+<h2 id="开启3个容器的镜像"><a href="#开启3个容器的镜像" class="headerlink" title="开启3个容器的镜像"></a>开启3个容器的镜像</h2><h3 id="分别打开3个终端，每个终端分别输入不同的命令"><a href="#分别打开3个终端，每个终端分别输入不同的命令" class="headerlink" title="分别打开3个终端，每个终端分别输入不同的命令"></a>分别打开3个终端，每个终端分别输入不同的命令</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo docker run -it -h master --name master ubuntu/hadoopinstalled</span><br><span class="line">sudo docker run -it -h slave01 --name slave01 ubuntu/hadoopinstalled</span><br><span class="line">sudo docker run -it -h slave02 --name slave02 ubuntu/hadoopinstalled</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="设置ip"><a href="#设置ip" class="headerlink" title="设置ip"></a>设置ip</h2><h3 id="查看ip"><a href="#查看ip" class="headerlink" title="查看ip"></a>查看ip</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cat /etc/hosts</span><br></pre></td></tr></table></figure>
+<p><img src="https://pic.downk.cc/item/5ea2add4c2a9a83be5772f3b.jpg" alt></p>
+<h3 id="分别将其他的容器ip加入自己的hosts里面"><a href="#分别将其他的容器ip加入自己的hosts里面" class="headerlink" title="分别将其他的容器ip加入自己的hosts里面"></a>分别将其他的容器ip加入自己的hosts里面</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim /etc/hosts</span><br></pre></td></tr></table></figure>
+<p><img src="https://pic.downk.cc/item/5ea2aeb3c2a9a83be57856b1.jpg" alt></p>
+<h3 id="检查是否成功（在master里面是否能进入slave01，slave02）"><a href="#检查是否成功（在master里面是否能进入slave01，slave02）" class="headerlink" title="检查是否成功（在master里面是否能进入slave01，slave02）"></a>检查是否成功（在master里面是否能进入slave01，slave02）</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ssh slave01</span><br><span class="line">docker run -itd --name master --hostname master --net network_my --ip 192.168.10.30 --add-host slave01:192.168.10.31 --add-host slave02:192.168.10.32  -d -P -p 50070:50070 -p 8088:8088 hadoop:master</span><br></pre></td></tr></table></figure>
+<p><img src="https://pic.downk.cc/item/5ea2af9ac2a9a83be5797bbc.jpg" alt></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh slave02</span><br></pre></td></tr></table></figure>
+<p><img src="https://pic.downk.cc/item/5ea2afd2c2a9a83be579c055.jpg" alt></p>
 
     </div>
 
@@ -400,7 +448,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#在docker上安装hadoop集群-基于docker安装之上"><span class="nav-number">1.</span> <span class="nav-text">在docker上安装hadoop集群(基于docker安装之上)</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#进入root用户-如果没有进入root用户要在命令前加sudo"><span class="nav-number">1.1.</span> <span class="nav-text">进入root用户(如果没有进入root用户要在命令前加sudo)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#从docker-hub上拉去一个Ubuntu镜像（这个过程可能有点慢，请耐心等待）"><span class="nav-number">1.2.</span> <span class="nav-text">从docker hub上拉去一个Ubuntu镜像（这个过程可能有点慢，请耐心等待）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#完成ubuntu的镜像拉去之后开始检验查看知否安装成功"><span class="nav-number">1.3.</span> <span class="nav-text">完成ubuntu的镜像拉去之后开始检验查看知否安装成功</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#在docker上安装hadoop集群-基于docker安装之上"><span class="nav-number">1.</span> <span class="nav-text">在docker上安装hadoop集群(基于docker安装之上)</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#进入root用户-如果没有进入root用户要在命令前加sudo"><span class="nav-number">1.1.</span> <span class="nav-text">进入root用户(如果没有进入root用户要在命令前加sudo)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#从docker-hub上拉去一个Ubuntu镜像（这个过程可能有点慢，请耐心等待）"><span class="nav-number">1.2.</span> <span class="nav-text">从docker hub上拉去一个Ubuntu镜像（这个过程可能有点慢，请耐心等待）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#完成ubuntu的镜像拉去之后开始检验查看知否安装成功"><span class="nav-number">1.3.</span> <span class="nav-text">完成ubuntu的镜像拉去之后开始检验查看知否安装成功</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#在dicker上运行ubuntu"><span class="nav-number">1.4.</span> <span class="nav-text">在dicker上运行ubuntu</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#更新资源（在docker上的ubuntu默认是root用户）"><span class="nav-number">1.5.</span> <span class="nav-text">更新资源（在docker上的ubuntu默认是root用户）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装vim编辑器（个人觉得gedit更好用，但是不知道怎么的docker用不了gedit）"><span class="nav-number">1.6.</span> <span class="nav-text">安装vim编辑器（个人觉得gedit更好用，但是不知道怎么的docker用不了gedit）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装ssh"><span class="nav-number">1.7.</span> <span class="nav-text">安装ssh</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#设置ssh免密码登陆"><span class="nav-number">1.8.</span> <span class="nav-text">设置ssh免密码登陆</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#设置ssh自动启动"><span class="nav-number">1.9.</span> <span class="nav-text">设置ssh自动启动</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#进入bashrc"><span class="nav-number">1.9.1.</span> <span class="nav-text">进入bashrc</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#在文件中加上启动命令"><span class="nav-number">1.9.2.</span> <span class="nav-text">在文件中加上启动命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#使用source命令，使之生效"><span class="nav-number">1.9.3.</span> <span class="nav-text">使用source命令，使之生效</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装jdk"><span class="nav-number">1.10.</span> <span class="nav-text">安装jdk</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#下载安装"><span class="nav-number">1.10.1.</span> <span class="nav-text">下载安装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#加入JAVA环境变量"><span class="nav-number">1.10.2.</span> <span class="nav-text">加入JAVA环境变量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#使用source命令"><span class="nav-number">1.10.3.</span> <span class="nav-text">使用source命令</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#保存镜像（打开新的终端）"><span class="nav-number">1.11.</span> <span class="nav-text">保存镜像（打开新的终端）</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#查看所以容器"><span class="nav-number">1.11.1.</span> <span class="nav-text">查看所以容器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#保存容器"><span class="nav-number">1.11.2.</span> <span class="nav-text">保存容器</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#开启3个容器的镜像"><span class="nav-number">1.12.</span> <span class="nav-text">开启3个容器的镜像</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#分别打开3个终端，每个终端分别输入不同的命令"><span class="nav-number">1.12.1.</span> <span class="nav-text">分别打开3个终端，每个终端分别输入不同的命令</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#设置ip"><span class="nav-number">1.13.</span> <span class="nav-text">设置ip</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#查看ip"><span class="nav-number">1.13.1.</span> <span class="nav-text">查看ip</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#分别将其他的容器ip加入自己的hosts里面"><span class="nav-number">1.13.2.</span> <span class="nav-text">分别将其他的容器ip加入自己的hosts里面</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#检查是否成功（在master里面是否能进入slave01，slave02）"><span class="nav-number">1.13.3.</span> <span class="nav-text">检查是否成功（在master里面是否能进入slave01，slave02）</span></a></li></ol></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -474,12 +522,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-area"></i>
     </span>
-    <span title="站点总字数">5k</span>
+    <span title="站点总字数">6k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">5 分钟</span>
+    <span title="站点阅读时长">6 分钟</span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
   </div>
