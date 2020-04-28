@@ -21,15 +21,19 @@
     var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"b2t":true,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Biao-K">
-<meta property="og:url" content="http://yoursite.com/archives/2020/index.html">
+  <meta name="description" content="介绍了selenium，现在我们用seleium来爬取淘宝上的商品">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Selenium爬取淘宝商品">
+<meta property="og:url" content="http://yoursite.com/2020/04/28/Selenium%E7%88%AC%E5%8F%96%E6%B7%98%E5%AE%9D%E5%95%86%E5%93%81/index.html">
 <meta property="og:site_name" content="Biao-K">
+<meta property="og:description" content="介绍了selenium，现在我们用seleium来爬取淘宝上的商品">
 <meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2020-04-28T11:01:01.000Z">
+<meta property="article:modified_time" content="2020-04-28T11:09:15.717Z">
 <meta property="article:author" content="小小代码员">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="http://yoursite.com/archives/2020/">
+<link rel="canonical" href="http://yoursite.com/2020/04/28/Selenium%E7%88%AC%E5%8F%96%E6%B7%98%E5%AE%9D%E5%95%86%E5%93%81/">
 
 
 <script id="page-configurations">
@@ -37,12 +41,12 @@
   CONFIG.page = {
     sidebar: "",
     isHome : false,
-    isPost : false,
+    isPost : true,
     lang   : 'zh-CN'
   };
 </script>
 
-  <title>归档 | Biao-K</title>
+  <title>Selenium爬取淘宝商品 | Biao-K</title>
   
 
 
@@ -202,130 +206,137 @@
         <div class="content-wrap">
           
 
-          <div class="content archive">
+          <div class="content post posts-expand">
             
 
+    
   
   
-  
-  <div class="post-block">
-    <div class="posts-collapse">
-      <div class="collection-title">
-        <span class="collection-header">嗯..! 目前共计 5 篇日志。 继续努力。</span>
-      </div>
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/04/28/Selenium%E7%88%AC%E5%8F%96%E6%B7%98%E5%AE%9D%E5%95%86%E5%93%81/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/1.jpg">
+      <meta itemprop="name" content="小小代码员">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Biao-K">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Selenium爬取淘宝商品
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-04-28 19:01:01" itemprop="dateCreated datePublished" datetime="2020-04-28T19:01:01+08:00">2020-04-28</time>
+            </span>
+
+          
+            <span id="/2020/04/28/Selenium%E7%88%AC%E5%8F%96%E6%B7%98%E5%AE%9D%E5%95%86%E5%93%81/" class="post-meta-item leancloud_visitors" data-flag-title="Selenium爬取淘宝商品" title="阅读次数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span class="leancloud-visitors-count"></span>
+            </span>
+            <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span><br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>1.6k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-    <div class="collection-year">
-      <span class="collection-header">2020</span>
+        <h1 id="介绍了selenium，现在我们用seleium来爬取淘宝上的商品"><a href="#介绍了selenium，现在我们用seleium来爬取淘宝上的商品" class="headerlink" title="介绍了selenium，现在我们用seleium来爬取淘宝上的商品"></a>介绍了selenium，现在我们用seleium来爬取淘宝上的商品</h1><a id="more"></a>
+<h2 id="没多的说的，直接上代码"><a href="#没多的说的，直接上代码" class="headerlink" title="没多的说的，直接上代码"></a>没多的说的，直接上代码</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line">from selenium import webdriver</span><br><span class="line">from selenium.webdriver.common.by import By</span><br><span class="line">from selenium.webdriver.common.keys import Keys</span><br><span class="line">from selenium.webdriver.support import expected_conditions as EC</span><br><span class="line">from selenium.webdriver.support.wait import WebDriverWait</span><br><span class="line">from pyquery import PyQuery as pq</span><br><span class="line">from urllib.parse import quote</span><br><span class="line">browser = webdriver.Chrome()</span><br><span class="line"><span class="built_in">wait</span> = WebDriverWait(browser,10)</span><br><span class="line">url = <span class="string">'https://re.taobao.com/search?keyword='</span></span><br><span class="line">keyword = <span class="string">"连衣裙"</span></span><br><span class="line">def index_page(page):</span><br><span class="line">   Url = url+keyword</span><br><span class="line">   browser.get(Url)</span><br><span class="line">   <span class="keyword">if</span> page == 1:</span><br><span class="line">      browser.execute_script(<span class="string">'window.scrollTo(0,document.body.scrollHeight)'</span>) <span class="comment">#到页面底部</span></span><br><span class="line">      get_products(page)</span><br><span class="line">   <span class="keyword">else</span>:</span><br><span class="line">      input = wait.until(EC.presence_of_element_located((By.CSS_SELECTOR,<span class="string">"#Jumper"</span>)))<span class="comment">#获取跳转页面的输入框</span></span><br><span class="line">      input.clear() <span class="comment">#清除框上面的东西</span></span><br><span class="line">      input.send_keys(page)<span class="comment">#输入页码</span></span><br><span class="line">      submit = wait.until(EC.presence_of_element_located((By.CSS_SELECTOR,<span class="string">'.pageConfirm'</span>))) <span class="comment">#获取确定框</span></span><br><span class="line">      submit.click() <span class="comment">#点击确定框</span></span><br><span class="line">      browser.execute_script(<span class="string">'window.scrollTo(0,document.body.scrollHeight)'</span>)</span><br><span class="line">      get_products(page)</span><br><span class="line"></span><br><span class="line">def get_products(page):</span><br><span class="line">   html = browser.page_source <span class="comment">#获取当前网页源代码</span></span><br><span class="line">   doc = pq(html)</span><br><span class="line">   items = doc(<span class="string">'#J_waterfallWrapper .item'</span>).items()</span><br><span class="line">   <span class="built_in">print</span>(items)</span><br><span class="line">   <span class="keyword">for</span> item <span class="keyword">in</span> items:</span><br><span class="line">      prodec = &#123;</span><br><span class="line">         <span class="string">'price'</span> : item.find(<span class="string">'.price strong'</span>).text(),</span><br><span class="line">         <span class="string">'title'</span> : item.find(<span class="string">'.title'</span>).text(),</span><br><span class="line">         <span class="string">'payNum'</span>:item.find(<span class="string">'payNum'</span>).text(),</span><br><span class="line">         <span class="string">'shopNick'</span> : item.find(<span class="string">'shopNick'</span>).text(),</span><br><span class="line">         <span class="string">'dsr-info-num'</span>:item.find(<span class="string">'dsr-info-num'</span>).text()</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="built_in">print</span>(prodec)</span><br><span class="line">   <span class="built_in">print</span>(<span class="string">"=====  第"</span>+str(page)+<span class="string">"页爬取成功 ======"</span>)</span><br><span class="line">   with open(<span class="string">'淘宝商品.txt'</span>,<span class="string">'a+'</span>,encoding=<span class="string">'utf-8'</span>) as file:</span><br><span class="line">      file.write(<span class="string">''</span>.join(str(prodec)))</span><br><span class="line">      file.write(<span class="string">'\n'</span>)</span><br><span class="line">Max_ = 100</span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(1,Max_+1):</span><br><span class="line">       index_page(i)</span><br></pre></td></tr></table></figure>
     </div>
 
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+    
+    
+    
+      
 
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2020-04-28T19:01:01+08:00"
-              content="2020-04-28">
-          04-28
-        </time>
-      </div>
+        
 
-      <div class="post-title">
-          <a class="post-title-link" href="/2020/04/28/Selenium%E7%88%AC%E5%8F%96%E6%B7%98%E5%AE%9D%E5%95%86%E5%93%81/" itemprop="url">
-            <span itemprop="name">Selenium爬取淘宝商品</span>
+  <div class="followme">
+    <p>欢迎关注我的其它发布渠道</p>
+
+    <div class="social-list">
+
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="/atom.xml">
+            <span class="icon">
+              <i class="fa fa-rss"></i>
+            </span>
+
+            <span class="label">RSS</span>
           </a>
-      </div>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2020-04-27T10:50:22+08:00"
-              content="2020-04-27">
-          04-27
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2020/04/27/selenium%E7%9A%84%E4%BD%BF%E7%94%A8/" itemprop="url">
-            <span itemprop="name">selenium的使用</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2020-04-24T16:15:37+08:00"
-              content="2020-04-24">
-          04-24
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2020/04/24/docker%E4%B8%8A%E5%AE%89%E8%A3%85hadoop%E9%9B%86%E7%BE%A4/" itemprop="url">
-            <span itemprop="name">docker上安装hadoop集群</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2020-04-19T15:37:20+08:00"
-              content="2020-04-19">
-          04-19
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2020/04/19/pymysql/" itemprop="url">
-            <span itemprop="name">pymysql增删改查</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2020-04-16T20:41:08+08:00"
-              content="2020-04-16">
-          04-16
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2020/04/16/docker%E5%AE%89%E8%A3%85/" itemprop="url">
-            <span itemprop="name">docker安装</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
-
-
+        </div>
     </div>
   </div>
-  
-  
-  
 
+
+ <div>
+  
+    <div>
+    
+        <div style="text-align:center;color: #ccc;font-size:14px;">-------------　　　　本文结束　<i class="fa fa-heart"></i>　感谢您的阅读　　　　-------------</div>
+    
+</div>
+  
+ </div>
+
+
+
+      <footer class="post-footer">
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2020/04/27/selenium%E7%9A%84%E4%BD%BF%E7%94%A8/" rel="prev" title="selenium的使用">
+      <i class="fa fa-chevron-left"></i> selenium的使用
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
   
 
 
@@ -378,6 +389,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#介绍了selenium，现在我们用seleium来爬取淘宝上的商品"><span class="nav-number">1.</span> <span class="nav-text">介绍了selenium，现在我们用seleium来爬取淘宝上的商品</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#没多的说的，直接上代码"><span class="nav-number">1.1.</span> <span class="nav-text">没多的说的，直接上代码</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
